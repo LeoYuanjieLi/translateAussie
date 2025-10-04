@@ -36,6 +36,7 @@ This extension translates selected text on a webpage to Chinese using the Google
 
 ## Google Translate API Key
 
-To use this extension, you need a Google Translate API key. You can get one from the [Google Cloud Platform Console](https://console.cloud.google.com/).
+This extension requires a Google Translate API key to function. You can obtain one from the [Google Cloud Platform Console](https://console.cloud.google.com/).
 
-**Important:** The `src/apiKey.ts` file is included in the `.gitignore` file, so your API key will not be committed to Git. However, you should still be careful not to expose your API key in other ways.
+> [!WARNING]
+> **Security Notice:** Exposing an API key in a browser extension can be risky, as other extensions could potentially access it. To mitigate this risk, create an API key that follows the principle of least privilege. For example, restrict the key to only allow access to the Google Translate API and nothing else. It is also crucial to monitor the key's usage regularly for any suspicious activity. Use at your own risk.
