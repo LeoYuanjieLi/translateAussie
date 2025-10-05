@@ -8,9 +8,9 @@ document.addEventListener("mouseup", () => {
     chrome.runtime.sendMessage({ action: "translate", text: selectedText }, (response) => {
       console.log("Response from background script:", response);
       if (response && response.translation) {
-        createBubble(selection, selectedText, response.translation);
+        createBubble(selection, response.translation);
       } else {
-        createBubble(selection, selectedText, "Error: No response from background script.");
+        createBubble(selection, "Error: No response from background script.");
       }
     });
   } else {
@@ -21,7 +21,7 @@ document.addEventListener("mouseup", () => {
   }
 });
 
-function createBubble(selection: Selection, originalText: string, translatedText: string) {
+function createBubble(selection: Selection, translatedText: string) {
   if (bubble) {
     bubble.remove();
   }
@@ -30,7 +30,6 @@ function createBubble(selection: Selection, originalText: string, translatedText
   bubble.id = "translate-bubble";
   bubble.innerHTML = `
     <div class="translate-bubble-content">
-      <p><strong>Original:</strong> ${originalText}</p>
       <p><strong>Aussie:</strong> ${translatedText}</p>
     </div>
   `;
