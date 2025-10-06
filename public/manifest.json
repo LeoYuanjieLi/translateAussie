@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Translate Aussie",
   "version": "1.0.0",
-  "description": "Translate selected text to Chinese (with the help with An Australian shepherd).",
+  "description": "Translate selected text to the language you selected (with the help with An Australian shepherd).",
   "permissions": [
     "activeTab",
     "scripting",
