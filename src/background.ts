@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "translate") {
-    chrome.storage.local.get(['apiKey'], (result) => {
+    chrome.storage.local.get(['apiKey', 'language'], (result) => {
       if (!result.apiKey) {
         sendResponse({ translation: "Error: API key not set." });
         return;
@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
       const API_KEY = result.apiKey;
       const text = request.text;
-      const targetLang = "zh-CN"; // Chinese
+      const targetLang = result.language || 'en'; // Default to English if no language is set
 
       const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
 
