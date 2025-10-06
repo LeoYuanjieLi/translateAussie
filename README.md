@@ -10,13 +10,12 @@ This extension translates selected text on a webpage to Chinese using the Google
 
 1.  **Install dependencies:**
 
-    ```bash
-    npm install
-    ```
+    `npm install`
 
 2.  **Set up your API Key:**
-    *   In the `src` directory, rename the file `apiKey.example.ts` to `apiKey.ts`.
-    *   Open the new `apiKey.ts` file and replace `"YOUR_GOOGLE_API_KEY"` with your actual Google Translate API key.
+    *   This extension requires each user to provide their own Google Translate API key.
+    *   After loading the extension, right-click the extension icon and choose "Options".
+    *   Enter your Google Translate API key and click "Save".
 
 3.  **Build the extension:**
 
@@ -40,7 +39,6 @@ This extension translates selected text on a webpage to Chinese using the Google
 
 ## Google Translate API Key
 
-This extension requires a Google Translate API key to function. You can obtain one from the [Google Cloud Platform Console](https://console.cloud.google.com/).
-
+This extension requires a Google Translate API key to function. You can obtain one from the Google Cloud Platform Console. The key is stored locally and securely using `chrome.storage`.
 > [!WARNING]
 > **Security Notice:** Exposing an API key in a browser extension can be risky, as other extensions could potentially access it. To mitigate this risk, create an API key that follows the principle of least privilege. For example, restrict the key to only allow access to the Google Translate API and nothing else. It is also crucial to monitor the key's usage regularly for any suspicious activity. Use at your own risk.
