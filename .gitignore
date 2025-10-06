@@ -1,4 +1,4 @@
 
 node_modules
 dist
-src/apiKey.ts
+.DS_Store

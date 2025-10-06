@@ -1,6 +1,10 @@
 # Translate Aussie Chrome Extension
 
+<img src="public/icon64.png" width="64" height="64" alt="Translate Aussie Icon">
+
 This extension translates selected text on a webpage to Chinese using the Google Translate API.
+
+
 
 ## How to Set Up
 
