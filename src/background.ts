@@ -1,3 +1,7 @@
+chrome.action.onClicked.addListener((tab) => {
+  chrome.runtime.openOptionsPage();
+});
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "translate") {
     chrome.storage.local.get(['apiKey', 'language'], (result) => {
